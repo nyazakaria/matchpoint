@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import {History} from './history.jsx'
+import {Display} from './Display'
+import {PlayPauseButton} from './pauseGame.jsx'
+import {ResetGame} from './ResetGame.jsx'
+import {PointScoredButton} from './PointScored.jsx'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="root">
+     
+      <Display />
+      <div className="buttons-row "> 
+      <PointScoredButton  player='player1' >Point Joueur 1</PointScoredButton>
+      <PointScoredButton  player='player2' >Point Joueur 2</PointScoredButton>
+      </div>
+      <div className="buttons-row">
+      <PlayPauseButton/>
+      <ResetGame/>
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
